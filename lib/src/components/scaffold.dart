@@ -134,10 +134,10 @@ class CustomScaffold extends StatelessWidget {
 
   Widget _mainBody() => DecoratedBox(
     decoration: const BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage(Constants.backgroundImage),
-        fit: BoxFit.cover,
-      ),
+      // image: DecorationImage(
+      //   image: AssetImage(Constants.backgroundImage),
+      //   fit: BoxFit.cover,
+      // ),
     ),
     child: LayoutBuilder(
       builder:

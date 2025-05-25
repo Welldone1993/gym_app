@@ -10,41 +10,38 @@ class SignInPageView extends GetView<SignInPageController> {
   const SignInPageView({super.key});
 
   @override
-  Widget build(BuildContext context) => CustomScaffold(
-        pageTitle: controller.getPageTitle,
-        body: _body(),
-        onBackTap: Get.back,
-      );
+  Widget build(BuildContext context) =>
+      CustomScaffold(pageTitle: "صفحه ورود", body: _body());
 
   Widget _body() => SingleChildScrollView(
-        child: Column(
-          children: [
-            _emailTextField(),
-            _passwordTextField(),
-            Constants.largeVerticalSpacer,
-            Obx(() => _signInButton()),
-          ],
-        ),
-      );
+    child: Column(
+      children: [
+        _emailTextField(),
+        _passwordTextField(),
+        Constants.largeVerticalSpacer,
+        Obx(() => _signInButton()),
+      ],
+    ),
+  );
 
   Widget _passwordTextField() => CustomTextField(
-        title: "LocaleKeys.social_sport_app_auth_password.tr",
-        textController: controller.passwordTextEditingController,
-        isPassword: true,
-        formKey: controller.passwordFormKey,
-        isRequired: true,
-      );
+    title: "پسوورد",
+    textController: controller.passwordTextEditingController,
+    isPassword: true,
+    formKey: controller.passwordFormKey,
+    isRequired: true,
+  );
 
   Widget _emailTextField() => CustomTextField(
-        title: "LocaleKeys.social_sport_app_shared_email.tr",
-        textController: controller.emailTextEditingController,
-        isRequired: true,
-        formKey: controller.emailFormKey,
-      );
+    title: "ایمیل",
+    textController: controller.emailTextEditingController,
+    isRequired: true,
+    formKey: controller.emailFormKey,
+  );
 
   Widget _signInButton() => CustomButton(
-        isDisable: controller.isCheckingAccount.value,
-        label: "LocaleKeys.social_sport_app_auth_sign_in.tr",
-        action: controller.signIn,
-      );
+    isDisable: controller.isCheckingAccount.value,
+    label: "ورود",
+    action: controller.signIn,
+  );
 }

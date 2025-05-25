@@ -16,4 +16,45 @@ class GymRouteNames extends Routes {
     RoutePaths.signInPage,
     RoutePaths.signInPage,
   );
+
+  /// Admin
+
+  static const Routes adminHomePage = Routes(
+    RoutePaths.adminHomePage,
+    RoutePaths.adminHomePage,
+  );
+  static const Routes adminPanelPage = Routes(
+    RoutePaths.adminHomePage + RoutePaths.adminPanelPage,
+    RoutePaths.adminPanelPage,
+  );
+  static const Routes addAthletePage = Routes(
+    RoutePaths.adminHomePage + RoutePaths.addAthletePage,
+    RoutePaths.addAthletePage,
+  );
+  static const Routes athleteListPage = Routes(
+    RoutePaths.adminHomePage + RoutePaths.athleteListPage,
+    RoutePaths.athleteListPage,
+  );
+  static const Routes athleteProfileForAdminPage = Routes(
+    RoutePaths.adminHomePage +
+        RoutePaths.athleteListPage +
+        RoutePaths.athleteProfileForAdminPage,
+    RoutePaths.athleteProfileForAdminPage,
+  );
+
+  static const Routes editAthleteForAdminPage = Routes(
+    RoutePaths.adminHomePage +
+        RoutePaths.athleteListPage +
+        RoutePaths.athleteProfileForAdminPage +
+        RoutePaths.editAthleteForAdminPage,
+    RoutePaths.editAthleteForAdminPage,
+  );
+
+  static const Routes renewalAthleteForAdminPage = Routes(
+    RoutePaths.adminHomePage +
+        RoutePaths.athleteListPage +
+        RoutePaths.athleteProfileForAdminPage +
+        RoutePaths.renewalAthleteForAdminPage,
+    RoutePaths.renewalAthleteForAdminPage,
+  );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gym_app/src/infrastructures/routes/route_names.dart';
 
 import '../../../../infrastructures/app_controller/app_controller.dart';
 import '../model/sign_in_dto.dart';
@@ -16,16 +17,16 @@ class SignInPageController extends GetxController {
   final GlobalKey<FormState> emailFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> passwordFormKey = GlobalKey<FormState>();
 
-  String get getPageTitle => "LocaleKeys.social_sport_app_routes_sign_in.tr";
 
   Future<void> signIn() async {
+    Get.offAllNamed(GymRouteNames.adminHomePage.uri);
+
     if (!emailFormKey.currentState!.validate() ||
         !passwordFormKey.currentState!.validate()) {
       return;
     }
     isCheckingAccount(true);
     final result = await _repository.signIn(dto: _dto());
-
 
     result.fold(
       (left) {
@@ -42,7 +43,7 @@ class SignInPageController extends GetxController {
   }
 
   SingInDto _dto() => SingInDto(
-        email: emailTextEditingController.text.trim(),
-        password: passwordTextEditingController.text.trim(),
-      );
+    email: emailTextEditingController.text.trim(),
+    password: passwordTextEditingController.text.trim(),
+  );
 }
