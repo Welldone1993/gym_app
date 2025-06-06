@@ -1,6 +1,7 @@
 class UserViewModel {
   final String id;
   final String role;
+  final String mobile;
   final String? firstName;
   final String? lastName;
   final String? email;
@@ -9,6 +10,7 @@ class UserViewModel {
   UserViewModel({
     required this.id,
     required this.role,
+    required this.mobile,
     this.firstName,
     this.lastName,
     this.email,
@@ -22,5 +24,6 @@ class UserViewModel {
         email: json['email'],
         avatar: json['avatar'],
         role: json['role'],
+        mobile: json['mobile'],
       );
 }

@@ -1,7 +1,6 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import '../routes/route_names.dart';
-import 'app_repository.dart';
+
 import 'user_view_model.dart';
 
 class AppController {
@@ -11,14 +10,35 @@ class AppController {
 
   static final AppController _instance = AppController._();
 
-  final storage = GetStorage();
+  final FlutterSecureStorage _secureStorage = const FlutterSecureStorage();
 
   late final String fullBaseUrl;
   String? userToken;
+  String? refreshToken;
   Rxn<UserViewModel> userModel = Rxn<UserViewModel>();
 
   Future<void> initializeApp(final String? initialRoute) async {
     //   TODO: Get user Access and handle for sign up or sign in
+  }
+
+  Future<void> loadTokens() async {
+    userToken = await _secureStorage.read(key: 'access_token') ?? '';
+    refreshToken = await _secureStorage.read(key: 'refresh_token') ?? '';
+  }
+
+  // Call this after login or token refresh
+  Future<void> setTokens(String access, String refresh) async {
+    userToken = access;
+    refreshToken = refresh;
+
+    await _secureStorage.write(key: 'access_token', value: access);
+    await _secureStorage.write(key: 'refresh_token', value: refresh);
+  }
+
+  Future<void> clearTokens() async {
+    userToken = '';
+    refreshToken = '';
+    await _secureStorage.deleteAll();
   }
 
   // Future<void> getUserInfo() async {

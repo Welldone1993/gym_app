@@ -9,11 +9,7 @@ class Constants {
   static const Color labelColor = Color(0xff05428A);
   static const Color dialogBackgroundColor = Color(0xffe8eef8);
 
-  static const String backgroundImage = 'lib/assets/Background_App_01.jpg';
-  static const String logInBackgroundImage = 'lib/assets/log_in_background.png';
-  static const String googleLogo = 'lib/assets/google_logo.png';
-  static const String profileBadge = 'lib/assets/profile_badge.png';
-  static const String profileBackground = 'lib/assets/profile_background.png';
+  static const String logInGym = 'lib/assets/log_in_gym.jpg';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;

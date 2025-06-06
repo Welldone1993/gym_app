@@ -1,14 +1,14 @@
 class SingInDto {
-  final String email;
+  final String userIdentifier;
   final String password;
 
   SingInDto({
-    required this.email,
+    required this.userIdentifier,
     required this.password,
   });
 
   Map<String, dynamic> toJson() => {
-        "email": email,
+        "userIdentifier": userIdentifier,
         "password": password,
       };
 }

@@ -12,12 +12,13 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   get: ^4.7.2
-  get_storage: ^2.1.1
+  flutter_secure_storage: ^9.0.0
   logger: ^2.5.0
   either_dart: ^1.0.0
   dio: ^5.8.0+1
   url_launcher: ^6.3.1
   octo_image: ^2.1.0
+  jwt_decoder: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -28,4 +29,7 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  assets:
+    - lib/assets/
+
 

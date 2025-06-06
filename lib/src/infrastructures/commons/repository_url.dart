@@ -1,6 +1,6 @@
 class RepositoryUrls {
   /// Authentication
-  static const String signIn = '/auth/register-with-email';
+  static const String signIn = '/authentications/login';
 
   static String getImage({
     required String folder,

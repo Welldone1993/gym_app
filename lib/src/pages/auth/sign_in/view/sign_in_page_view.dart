@@ -10,17 +10,24 @@ class SignInPageView extends GetView<SignInPageController> {
   const SignInPageView({super.key});
 
   @override
-  Widget build(BuildContext context) =>
-      CustomScaffold(pageTitle: "صفحه ورود", body: _body());
+  Widget build(BuildContext context) => CustomScaffold(
+    pageTitle: "صفحه ورود",
+    body: _body(),
+    backgroundImage: Constants.logInGym,
+    opacity: 0.3,
+  );
 
-  Widget _body() => SingleChildScrollView(
-    child: Column(
-      children: [
-        _emailTextField(),
-        _passwordTextField(),
-        Constants.largeVerticalSpacer,
-        Obx(() => _signInButton()),
-      ],
+  Widget _body() => Center(
+    child: SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _mobileTextField(),
+          _passwordTextField(),
+          Constants.largeVerticalSpacer,
+          Obx(() => _signInButton()),
+        ],
+      ),
     ),
   );
 
@@ -32,11 +39,12 @@ class SignInPageView extends GetView<SignInPageController> {
     isRequired: true,
   );
 
-  Widget _emailTextField() => CustomTextField(
-    title: "ایمیل",
-    textController: controller.emailTextEditingController,
+  Widget _mobileTextField() => CustomTextField(
+    title: "موبایل",
+    textController: controller.mobileTextEditingController,
     isRequired: true,
-    formKey: controller.emailFormKey,
+    formKey: controller.mobileFormKey,
+    isNumber: true,
   );
 
   Widget _signInButton() => CustomButton(

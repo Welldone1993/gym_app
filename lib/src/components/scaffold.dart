@@ -17,9 +17,13 @@ class CustomScaffold extends StatelessWidget {
     this.onRefresh,
     this.showEndDrawer,
     this.resizeToAvoidBottomInset,
+    this.backgroundImage,
+    this.opacity,
   });
 
   final String pageTitle;
+  final String? backgroundImage;
+  final double? opacity;
   final bool? showEndDrawer;
   final bool? resizeToAvoidBottomInset;
 
@@ -133,11 +137,16 @@ class CustomScaffold extends StatelessWidget {
           );
 
   Widget _mainBody() => DecoratedBox(
-    decoration: const BoxDecoration(
-      // image: DecorationImage(
-      //   image: AssetImage(Constants.backgroundImage),
-      //   fit: BoxFit.cover,
-      // ),
+    decoration: BoxDecoration(
+      image:
+          backgroundImage != null
+              ? DecorationImage(
+                image: AssetImage(backgroundImage!),
+                fit: BoxFit.cover,
+                opacity: opacity ?? 1.0,
+              )
+              : null,
+      color: Colors.blueGrey,
     ),
     child: LayoutBuilder(
       builder:

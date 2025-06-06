@@ -16,6 +16,7 @@ class CustomTextField extends StatefulWidget {
     this.suffixIcon,
     this.formKey,
     this.maxLines,
+    this.maxLength,
   });
 
   // TODO: assertion for handle is password and icon together
@@ -30,6 +31,7 @@ class CustomTextField extends StatefulWidget {
   final bool? readOnly;
   final IconData? suffixIcon;
   final int? maxLines;
+  final int? maxLength;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -42,7 +44,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) => Padding(
         padding: Constants.mediumPadding,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
               widget.title,
@@ -64,7 +66,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   color: Constants.secondaryColor,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(
-                      Constants.mediumSpace,
+                      Constants.giantSpace,
                     ),
                   ),
                 ),
@@ -73,19 +75,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   validator: widget.isRequired!
                       ? (value) {
                           if (value == null || value.isEmpty) {
-                            return 'required';
+                            return 'اجباری';
                           }
                           return null;
                         }
                       : (value) => null,
                   maxLines: widget.maxLines ?? 1,
+                  maxLength: widget.maxLength,
                   controller: widget.textController,
                   obscureText:
                       _getVisibility(_obscureText, widget.isPassword ?? false),
                   showCursor: true,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    suffixIcon: widget.suffixIcon != null
+                    prefixIcon: widget.suffixIcon != null
                         ? Icon(
                             widget.suffixIcon!,
                             color: Colors.white70,
