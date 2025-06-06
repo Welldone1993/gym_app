@@ -15,11 +15,11 @@ class AthleteProfileForAdminPageView
     pageTitle: 'پروفایل کاربر',
     body: Column(
       children: [
-        CustomButton(
+        CustomActionButton(
           label: "ویرایش",
           action: () => Get.toNamed(GymRouteNames.editAthleteForAdminPage.uri),
         ),
-        CustomButton(
+        CustomActionButton(
           label: "تمدید",
           action:
               () => Get.toNamed(GymRouteNames.renewalAthleteForAdminPage.uri),

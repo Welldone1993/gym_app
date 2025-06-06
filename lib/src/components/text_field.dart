@@ -63,10 +63,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     strokeAlign: BorderSide.strokeAlignOutside,
                     color: Colors.white,
                   ),
-                  color: Constants.secondaryColor,
+                  color: Constants.secondaryColor.withValues(alpha: 0.5),
                   borderRadius: const BorderRadius.all(
                     Radius.circular(
-                      Constants.giantSpace,
+                      Constants.largeSpace,
                     ),
                   ),
                 ),
@@ -86,6 +86,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   obscureText:
                       _getVisibility(_obscureText, widget.isPassword ?? false),
                   showCursor: true,
+                  cursorColor: Colors.white,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     prefixIcon: widget.suffixIcon != null

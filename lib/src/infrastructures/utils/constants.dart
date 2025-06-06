@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 class Constants {
   static const Color primaryColor = Color(0xff335477);
   static const Color secondaryColor = Color(0xff234463);
-  static const Color buttonColor = Color(0xffF95E01);
-  static const Color unfollowButtonColor = Color(0xffd3240f);
-  static const Color faceBookColor = Color(0xff0078F6);
-  static const Color labelColor = Color(0xff05428A);
-  static const Color dialogBackgroundColor = Color(0xffe8eef8);
+  static const Color borderColor = Color(0xff728282);
 
   static const String logInGym = 'lib/assets/log_in_gym.jpg';
 
@@ -31,16 +27,21 @@ class Constants {
   static const SizedBox largeHorizontalSpacer = SizedBox(width: largeSpace);
   static const SizedBox giantHorizontalSpacer = SizedBox(width: giantSpace);
 
-  static const EdgeInsetsDirectional tinyPadding =
-      EdgeInsetsDirectional.all(tinySpace);
-  static const EdgeInsetsDirectional smallPadding =
-      EdgeInsetsDirectional.all(smallSpace);
-  static const EdgeInsetsDirectional mediumPadding =
-      EdgeInsetsDirectional.all(mediumSpace);
-  static const EdgeInsetsDirectional largePadding =
-      EdgeInsetsDirectional.all(largeSpace);
-  static const EdgeInsetsDirectional giantPadding =
-      EdgeInsetsDirectional.all(giantSpace);
+  static const EdgeInsetsDirectional tinyPadding = EdgeInsetsDirectional.all(
+    tinySpace,
+  );
+  static const EdgeInsetsDirectional smallPadding = EdgeInsetsDirectional.all(
+    smallSpace,
+  );
+  static const EdgeInsetsDirectional mediumPadding = EdgeInsetsDirectional.all(
+    mediumSpace,
+  );
+  static const EdgeInsetsDirectional largePadding = EdgeInsetsDirectional.all(
+    largeSpace,
+  );
+  static const EdgeInsetsDirectional giantPadding = EdgeInsetsDirectional.all(
+    giantSpace,
+  );
 
   static const boldTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
@@ -58,37 +59,5 @@ class Constants {
   static const mediumThinTextStyle = TextStyle(
     fontWeight: FontWeight.w100,
     color: Colors.white,
-  );
-  static const readMoreTextStyle = TextStyle(
-    fontWeight: FontWeight.w100,
-    color: buttonColor,
-    fontSize: 12,
-  );
-
-  static const dialogBoldTextStyle = TextStyle(
-    fontSize: 25,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const dialogSemiBoldTextStyle = TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w600,
-  );
-  static const dialogMediumThinTextStyle = TextStyle(
-    fontWeight: FontWeight.w100,
-  );
-  static const dialogSmallThinTextStyle = TextStyle(
-    fontWeight: FontWeight.w100,
-    fontSize: 12,
-  );
-  static const dialogExtraSmallThinTextStyle = TextStyle(
-    // fontWeight: FontWeight.bold,
-    fontSize: 10,
-  );
-
-  static const timeAgoTextStyle = TextStyle(
-    fontWeight: FontWeight.w500,
-    color: Colors.grey,
-    fontSize: 10,
   );
 }

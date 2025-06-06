@@ -12,7 +12,7 @@ class AthleteListPageView extends GetView<AthleteListController> {
   @override
   Widget build(BuildContext context) => CustomScaffold(
     pageTitle: 'فهرست ورزشکاران',
-    body: CustomButton(
+    body: CustomActionButton(
       label: "پروفایل",
       action: () => Get.toNamed(GymRouteNames.athleteProfileForAdminPage.uri),
     ),

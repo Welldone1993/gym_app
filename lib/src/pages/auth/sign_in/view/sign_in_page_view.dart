@@ -47,9 +47,10 @@ class SignInPageView extends GetView<SignInPageController> {
     isNumber: true,
   );
 
-  Widget _signInButton() => CustomButton(
+  Widget _signInButton() => CustomActionButton(
     isDisable: controller.isCheckingAccount.value,
     label: "ورود",
     action: controller.signIn,
+    backgroundColor: Constants.primaryColor.withValues(alpha: 0.8),
   );
 }

@@ -146,7 +146,7 @@ class CustomScaffold extends StatelessWidget {
                 opacity: opacity ?? 1.0,
               )
               : null,
-      color: Colors.blueGrey,
+      color: Colors.blueGrey.withValues(alpha: 0.8),
     ),
     child: LayoutBuilder(
       builder:
