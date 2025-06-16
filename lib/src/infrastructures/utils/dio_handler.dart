@@ -26,7 +26,7 @@ class DioHandler {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-           if (isLoggedIn) {
+          if (isLoggedIn) {
             options.headers['Authorization'] =
                 'Bearer ${AppController().userToken}';
           }
@@ -186,26 +186,6 @@ class DioHandler {
       _logger.i((response.data as Map<String, dynamic>)['data']);
 
       return Right((response.data as Map<String, dynamic>)['data'] as T);
-    } catch (e) {
-      _logger.e(e);
-
-      return Left('$e');
-    }
-  }
-
-  Future<Either<String, T>> getChats<T>(final String url) async {
-    final path = '$_baseUrl$url';
-
-    try {
-      _logger.f(path);
-
-      final response = await _dio.get<T>(path);
-
-      _logger.d(response.statusCode);
-
-      _logger.i(response.data as T);
-
-      return Right(response.data as T);
     } catch (e) {
       _logger.e(e);
 
